@@ -12,7 +12,7 @@ var fs = require('fs');
 
 router.get('/', async function (req, res, next) {
     try {
-        if (!Object.keys(req.body).includes(['user_id'])) {
+        if (Object.keys(req.body).includes(['user_id'])) {
             return res.status(400).json({ staus: 'success', message: 'Invalid Test Input' });
         }
         let body = req.body;

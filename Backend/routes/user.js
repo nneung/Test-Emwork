@@ -55,7 +55,6 @@ router.put('/', async function (req, res, next) {
         let data = await users.findOneAndUpdate({
             user_id: body.user_id,
             $set: req.body,
-            returnNewDocument: true
         });
 
         res.status(200).json({ staus: 'success', message: 'Update User Success', data: data });
