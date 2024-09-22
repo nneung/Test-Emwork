@@ -47,7 +47,7 @@ router.post('/', async function (req, res, next) {
 
 router.put('/', async function (req, res, next) {
     try {
-        if (!Object.keys(req.body).includes(['user_id', 'first_name', 'last_name'])) {
+        if (Object.keys(req.body).includes(['user_id', 'first_name', 'last_name'])) {
             return res.status(400).json({ staus: 'success', message: 'Invalid User Input' });
         }
         let body = req.body;
@@ -67,7 +67,7 @@ router.put('/', async function (req, res, next) {
 
 router.delete('/', async function (req, res, next) {
     try {
-        if (!Object.keys(req.body).includes(['user_id'])) {
+        if (Object.keys(req.body).includes(['user_id'])) {
             return res.status(400).json({ staus: 'success', message: 'Invalid User Input' });
         }
         let body = req.body;
